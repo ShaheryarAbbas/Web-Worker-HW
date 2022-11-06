@@ -6,7 +6,8 @@
 <body>
     <p> Counter Number <output id="result"></output></p>
     <br><br>
-    <input type="button" value="start worker" onclick="fun()">
+    <input type="button" value="Start Worker" onclick="fun()">
+    <input type="button" value="Stop Worker" onclick="fun1()">
 </body>
 </html>
 <script>
@@ -18,4 +19,7 @@
             document.getElementById("result").innerHTML=e.data;
         }
     }
+    function fun1(){
+            b.terminate();
+        }
 </script>
