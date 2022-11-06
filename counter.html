@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Web Worker Counter</title>
+</head>
+<body>
+    <p> Counter Number <output id="result"></output></p>
+    <br><br>
+    <input type="button" value="start worker" onclick="fun()">
+</body>
+</html>
+<script>
+    var b;
+    function fun(){
+        b= new Worker("main.js");
+        b.onmessage=function(e)
+        {
+            document.getElementById("result").innerHTML=e.data;
+        }
+    }
+</script>
